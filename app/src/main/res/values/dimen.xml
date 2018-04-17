@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title_margin">30dp</dimen>
+    <dimen name="section_margin">30dp</dimen>
+    <dimen name="subsection_margin">15dp</dimen>
+    <dimen name="side_margin">25dp</dimen>
+    <dimen name="level_margin">55dp</dimen>
+    <dimen name="first_level">30dp</dimen>
+    <dimen name="second_level">20dp</dimen>
+    <dimen name="spinner_size">40dp</dimen>
+    <dimen name="pending_margin">10dp</dimen>
+    <dimen name="editText_width">80dp</dimen>
+    <dimen name="spinner_width">150dp</dimen>
+    <dimen name="dropdown_width">135dp</dimen>
+    <dimen name="slideshow_margin">30dp</dimen>
+    <dimen name="buttons_inside">10dp</dimen>
+    <dimen name="photo_buttons">50dp</dimen>
+    <dimen name="take_button">130dp</dimen>
+    <dimen name="photos_top">10dp</dimen>
+    <dimen name="edit_email">250dp</dimen>
+    <dimen name="location_dialog_lrpadding">15dp</dimen>
+    <dimen name="location_dialog_tbpadding">10dp</dimen>
+    <dimen name="location_dialog_text_padding">20dp</dimen>
+</resources>

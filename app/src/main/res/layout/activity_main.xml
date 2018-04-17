@@ -1,9 +1,366 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- application title -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/title_margin"
+            android:layout_marginBottom="@dimen/title_margin">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/app_name"
+                android:textSize="30sp" />
+
+        </RelativeLayout>
+
+        <!-- login title -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/sign_in_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginRight="@dimen/side_margin"
+                android:text="@string/login"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <!-- two buttons: set wallpaper & restore wallpaper -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/photos_top"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/set"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginRight="@dimen/buttons_inside"
+                android:text="@string/setWallpaper"
+                android:textSize="20dp"
+                android:lines="2"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/restore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/buttons_inside"
+                android:layout_marginRight="@dimen/side_margin"
+                android:text="@string/restoreWallpaper"
+                android:textSize="20dp"
+                android:lines="2"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <!-- two buttons: more photos & take photos -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/photos_top"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <Button
+                android:id="@+id/more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/side_margin"
+                android:layout_marginRight="@dimen/buttons_inside"
+                android:text="@string/morePhotos"
+                android:textSize="20dp"
+                android:lines="2"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/take"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/buttons_inside"
+                android:layout_marginRight="@dimen/side_margin"
+                android:text="@string/takePhotos"
+                android:textSize="20dp"
+                android:lines="2"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <!-- display title -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/side_margin"
+            android:layout_marginRight="@dimen/side_margin"
+            android:layout_marginTop="@dimen/title_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/display"
+                android:textSize="@dimen/first_level" />
+
+        </RelativeLayout>
+
+        <!-- display: user -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/level_margin"
+            android:layout_marginRight="@dimen/level_margin"
+            android:layout_marginTop="@dimen/subsection_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_text"
+                android:layout_centerVertical="true"
+                android:text="@string/user"
+                android:textColor="@color/grey_out"
+                android:textSize="@dimen/second_level" />
+
+            <CheckBox
+                android:id="@+id/user_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+        <!-- display: friend -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/level_margin"
+            android:layout_marginRight="@dimen/level_margin"
+            android:layout_marginTop="@dimen/subsection_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/friend"
+                android:textColor="@color/grey_out"
+                android:textSize="@dimen/second_level"
+                android:id="@+id/friend_text"/>
+
+            <CheckBox
+                android:id="@+id/friend_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+        <!-- share mode -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/side_margin"
+            android:layout_marginRight="@dimen/side_margin"
+            android:layout_marginTop="@dimen/title_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/share"
+                android:id="@+id/share_text"
+                android:textSize="@dimen/first_level" />
+
+            <Switch
+                android:id="@+id/share_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+        <!-- dejavu mode -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/side_margin"
+            android:layout_marginRight="@dimen/side_margin"
+            android:layout_marginTop="@dimen/title_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/dejavu_mode"
+                android:textSize="@dimen/first_level" />
+
+            <Switch
+                android:id="@+id/dejavu_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+        <!-- dejavu: location -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/level_margin"
+            android:layout_marginRight="@dimen/level_margin"
+            android:layout_marginTop="@dimen/subsection_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/location"
+                android:textSize="@dimen/second_level" />
+
+            <CheckBox
+                android:id="@+id/locationCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+        <!-- dejavu: time -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/level_margin"
+            android:layout_marginRight="@dimen/level_margin"
+            android:layout_marginTop="@dimen/subsection_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/time"
+                android:textSize="@dimen/second_level" />
+
+            <CheckBox
+                android:id="@+id/timeCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+        <!-- Album -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/side_margin"
+            android:layout_marginRight="@dimen/side_margin"
+            android:layout_marginTop="@dimen/title_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/album"
+                android:textSize="@dimen/first_level" />
+
+            <Spinner
+                android:id="@+id/albumSpinner"
+                android:layout_width="@dimen/spinner_width"
+                android:layout_height="@dimen/spinner_size"
+                android:layout_alignParentRight="true"
+                android:background="@android:drawable/btn_dropdown"
+                android:dropDownWidth="@dimen/dropdown_width"
+                android:spinnerMode="dropdown"
+                android:theme="@android:style/Theme.Holo.Light" />
+
+        </RelativeLayout>
+
+        <!-- slideshow title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/side_margin"
+            android:layout_marginTop="@dimen/title_margin"
+            android:text="@string/slideshow"
+            android:textSize="@dimen/first_level" />
+
+        <!-- slideshow: time typing -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/slideshow_margin"
+            android:layout_marginRight="@dimen/level_margin"
+            android:layout_marginTop="@dimen/subsection_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="@string/each_photo"
+                android:textSize="@dimen/second_level" />
+
+
+            <TextView
+                android:id="@+id/seconds2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="@string/seconds"
+                android:textSize="@dimen/second_level" />
+
+            <EditText
+                android:id="@+id/each_edit"
+                android:layout_width="@dimen/editText_width"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/pending_margin"
+                android:layout_toLeftOf="@id/seconds2"
+                android:cursorVisible="false"
+                android:ems="4"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:maxLength="9"
+                android:text="300"
+                android:textSize="@dimen/second_level" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
