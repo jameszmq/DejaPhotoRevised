@@ -15,8 +15,8 @@
     <string name="seconds">seconds</string>
     <string name="LocationDenied">Location permission is denied. Do you want to turn it on?</string>
     <string name="login">login</string>
-    <string name="setWallpaper">Set\nWallpapaer</string>
-    <string name="restoreWallpaper">Restore\nWallpapaer</string>
+    <string name="setWallpaper">Set\nWallpaper</string>
+    <string name="restoreWallpaper">Restore\nWallpaper</string>
     <string name="morePhotos">More\nPhotos</string>
     <string name="takePhotos">Take\nPhotos</string>
     <string name="display">Display</string>
